@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,4 +13,25 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    font-family: "Cabin", sans-serif;
+    color: #fff;
+    text-shadow: 0 0 20px #aaaaaa;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5em;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    text-align:center;
 }
