@@ -1,7 +1,6 @@
 const backgroundImg = fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
 	.then(res => res.json())
 	.then(data => {
-        console.log(data);
 		document.body.style.backgroundImage = `url(${data.urls.regular})`;
         document.getElementById("author-info").textContent = `Photographer: ${data.user.name}`;
 	})
@@ -40,3 +39,24 @@ function createDate() {
 
 createDate();
 setInterval(createDate, 1000);
+
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available.");
+            }
+            return res.json();
+        })
+        .then(data => {
+            console.log(data);
+            const iconURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+            document.getElementById("weather").innerHTML = `
+            <div class="weather-top" id="weather-top">
+                <img src="${iconURL}" />
+                <h2>${data.main.temp.toFixed(0)}°</h2>
+            </div>
+            <p>${data.name}</p>`;
+        })
+        .catch(err => console.error(err))
+});

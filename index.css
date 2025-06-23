@@ -36,7 +36,8 @@ main {
     text-align:center;
 }
 
-.stocks-top {
+.stocks-top,
+.weather-top {
     display: flex;
     align-items: center;
     gap: .5em;
@@ -44,7 +45,8 @@ main {
     margin-bottom: 1em;
 }
 
-.stocks-top h2{
+.stocks-top h2,
+.weather-top h2 {
     margin: 0;
 }
 
@@ -52,6 +54,20 @@ main {
     height: 1.5em;
 }
 
-.stocks p {
+.stocks p,
+.weather p {
     margin: 0;
+}
+
+.weather {
+    text-align: right;
+}
+
+.weather-top {
+    margin: 0;
+    gap: 0;
+}
+
+.weather-top img {
+    height: 3em;
 }
