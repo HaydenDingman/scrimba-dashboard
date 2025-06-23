@@ -32,3 +32,11 @@ fetch(`https://api.coingecko.com/api/v3/coins/dogecoin`)
     .catch(err => {
         console.log(err)
     });
+
+function createDate() {
+    const date = new Date();
+    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+}
+
+createDate();
+setInterval(createDate, 1000);
