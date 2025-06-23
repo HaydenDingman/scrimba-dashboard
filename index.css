@@ -35,3 +35,23 @@ main {
 .time {
     text-align:center;
 }
+
+.stocks-top {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+}
+
+.stocks-top h2{
+    margin: 0;
+}
+
+.stocks-top img {
+    height: 1.5em;
+}
+
+.stocks p {
+    margin: 0;
+}
