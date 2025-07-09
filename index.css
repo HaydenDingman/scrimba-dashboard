@@ -71,3 +71,9 @@ main {
 .weather-top img {
     height: 3em;
 }
+
+@media (min-width: 700px) {
+    .time {
+        font-size: 5rem;
+    }
+}
